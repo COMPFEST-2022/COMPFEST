@@ -36,10 +36,10 @@ public class shoot : MonoBehaviour
 		if (timer >= (4.2 - 0.5)) {
             animator.SetBool("IsAttack", true);
         } if (timer >= 4.2 ) {
-            Rigidbody2D bPrefab = Instantiate(bulletPrefab, shootPos.transform.position, shootPos.transform.rotation) as Rigidbody2D;
+            Rigidbody2D bPrefab = Instantiate(bulletPrefab, shootPos.transform.position, Quaternion.Euler(new Vector3(0, 0, 180))) as Rigidbody2D;
             Rigidbody2D bPrefab2 = Instantiate(bulletPrefab, shootPos1.transform.position, shootPos1.transform.rotation) as Rigidbody2D;
-            Rigidbody2D bPrefab3 = Instantiate(bulletPrefab, shootPos2.transform.position, shootPos2.transform.rotation) as Rigidbody2D;
-            Rigidbody2D bPrefab4 = Instantiate(bulletPrefab, shootPos3.transform.position, shootPos3.transform.rotation) as Rigidbody2D;
+            Rigidbody2D bPrefab3 = Instantiate(bulletPrefab, shootPos2.transform.position, Quaternion.Euler(new Vector3(0, 0, 270))) as Rigidbody2D;
+            Rigidbody2D bPrefab4 = Instantiate(bulletPrefab, shootPos3.transform.position, Quaternion.Euler(new Vector3(0, 0, 90))) as Rigidbody2D;
             bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2 (bulletPos * bulletSpeed, 0));
             bPrefab2.GetComponent<Rigidbody2D>().AddForce(new Vector2 (bulletPos * bulletSpeed * -1, 0));
             bPrefab3.GetComponent<Rigidbody2D>().AddForce(new Vector2 (0, bulletPos * bulletSpeed));
