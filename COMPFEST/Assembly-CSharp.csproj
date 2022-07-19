@@ -46,6 +46,8 @@
      <Compile Include="Assets\Bolt 2D LittleWars VE3\ReadMe\Scripts\ReadmeVE3.cs" />
      <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\CameraFollow.cs" />
      <Compile Include="Assets\shoot.cs" />
+     <Compile Include="Assets\BulletScript.cs" />
+     <Compile Include="Assets\PathFinding.cs" />
      <None Include="Assets\Cave Platformer Tileset\readme.txt" />
      <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Changelog.txt" />
      <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Shader\SH Sprite Shadow.shader" />
@@ -278,6 +280,15 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
         <HintPath>D:\MAH_CODE\Mob_Prog\Game_Mobile\COMPFEST_git\COMPFEST\COMPFEST\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+        <HintPath>D:\MAH_CODE\Mob_Prog\Game_Mobile\COMPFEST_git\COMPFEST\COMPFEST\Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.ClipperLib">
+        <HintPath>D:\MAH_CODE\Mob_Prog\Game_Mobile\COMPFEST_git\COMPFEST\COMPFEST\Assets\AstarPathfindingProject\Plugins\Clipper\Pathfinding.ClipperLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.Poly2Tri">
+        <HintPath>D:\MAH_CODE\Mob_Prog\Game_Mobile\COMPFEST_git\COMPFEST\COMPFEST\Assets\AstarPathfindingProject\Plugins\Poly2Tri\Pathfinding.Poly2Tri.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>E:\Program Files\Unity\2020.3.27f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -719,6 +730,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{4555d633-79f5-1b05-d556-745dcd682e77}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{fed653da-5c70-9489-7a8e-21acd3005cc7}</Project>
+      <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{7702db0e-355d-f0c1-1c60-40fc367ebb0a}</Project>
+      <Name>PackageToolsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{b58e27b4-78bf-b15e-4c6d-edabaa5c29f8}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{7c6fbea2-548c-a141-9741-db9c7e71620d}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

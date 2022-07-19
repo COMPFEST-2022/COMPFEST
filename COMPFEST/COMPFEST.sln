@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{4d90472c-7946-064f-9bba-2a0cca1ad25e}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstarPathfindingProject", "AstarPathfindingProject.csproj", "{fed653da-5c70-9489-7a8e-21acd3005cc7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponents", "NavMeshComponents.csproj", "{b58e27b4-78bf-b15e-4c6d-edabaa5c29f8}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{8fce030d-ab02-784b-4dbb-950ccbc6b03d}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstarPathfindingProjectEditor", "AstarPathfindingProjectEditor.csproj", "{4555d633-79f5-1b05-d556-745dcd682e77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageToolsEditor", "PackageToolsEditor.csproj", "{7702db0e-355d-f0c1-1c60-40fc367ebb0a}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavMeshComponentsEditor", "NavMeshComponentsEditor.csproj", "{7c6fbea2-548c-a141-9741-db9c7e71620d}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,8 +22,18 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4d90472c-7946-064f-9bba-2a0cca1ad25e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4d90472c-7946-064f-9bba-2a0cca1ad25e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{fed653da-5c70-9489-7a8e-21acd3005cc7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{fed653da-5c70-9489-7a8e-21acd3005cc7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b58e27b4-78bf-b15e-4c6d-edabaa5c29f8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b58e27b4-78bf-b15e-4c6d-edabaa5c29f8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8fce030d-ab02-784b-4dbb-950ccbc6b03d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8fce030d-ab02-784b-4dbb-950ccbc6b03d}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4555d633-79f5-1b05-d556-745dcd682e77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4555d633-79f5-1b05-d556-745dcd682e77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7702db0e-355d-f0c1-1c60-40fc367ebb0a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7702db0e-355d-f0c1-1c60-40fc367ebb0a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7c6fbea2-548c-a141-9741-db9c7e71620d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7c6fbea2-548c-a141-9741-db9c7e71620d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
