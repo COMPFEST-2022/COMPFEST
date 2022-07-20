@@ -50,12 +50,12 @@ public class PlayerController : MonoBehaviour
 
                 animator.SetFloat("speed", movementInput.sqrMagnitude);
                 
-                Debug.Log(movementInput);
-                Debug.Log(movementInput.magnitude);
+                //Debug.Log(movementInput);
+                //Debug.Log(movementInput.magnitude);
                 //animator.SetBool("isMoving", success);
             } else {
                 animator.SetFloat("speed", movementInput.magnitude);
-                Debug.Log(movementInput.magnitude);
+                //Debug.Log(movementInput.magnitude);
                 //animator.SetBool("isMoving", false);
             }
 

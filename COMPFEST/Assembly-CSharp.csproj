@@ -48,6 +48,7 @@
      <Compile Include="Assets\shoot.cs" />
      <Compile Include="Assets\BulletScript.cs" />
      <Compile Include="Assets\PathFinding.cs" />
+     <Compile Include="Assets\LeftRightController.cs" />
      <None Include="Assets\Cave Platformer Tileset\readme.txt" />
      <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Changelog.txt" />
      <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Shader\SH Sprite Shadow.shader" />
