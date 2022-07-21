@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public ContactFilter2D movementFilter;
     public SwordAttack swordAttack;
     public GameObject Player;
+    bool InRadius;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     private string WeaponType;
+    private string WeaponTypeTag;
 
     bool canMove = true;
 
@@ -69,15 +71,23 @@ public class PlayerController : MonoBehaviour
                 spriteRenderer.flipX = false;
             }
         }
+        
+        Debug.Log(InRadius);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Pistol") {
-            WeaponType = "Pistol";
-            Debug.Log("Change");
-        } if (other.gameObject.tag == "Sword") {
-            WeaponType = "Sword";
-            Debug.Log("Change");
+     private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Sword") {
+            InRadius = true;
+            WeaponTypeTag = "Sword"; 
+        } if (other.gameObject.tag == "Pistol") {
+            InRadius = true;
+            WeaponTypeTag = "Pistol";
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.gameObject.tag == "Sword" || other.gameObject.tag == "Pistol") {
+            InRadius = false;
         }
     }
 
@@ -105,6 +115,13 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>();
+    }
+
+    void OnInteract() {
+        if (InRadius == true) {
+            WeaponType = WeaponTypeTag;
+            Debug.Log("Change");
+        }
     }
 
     IEnumerator OnFire() {
