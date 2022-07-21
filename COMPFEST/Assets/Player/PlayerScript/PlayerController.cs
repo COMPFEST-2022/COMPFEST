@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
+    private string WeaponType;
+
     bool canMove = true;
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        WeaponType = "Sword";
     }
 
     private void FixedUpdate() {
@@ -68,6 +71,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Pistol") {
+            WeaponType = "Pistol";
+            Debug.Log("Change");
+        } if (other.gameObject.tag == "Sword") {
+            WeaponType = "Sword";
+            Debug.Log("Change");
+        }
+    }
+
     private bool TryMove(Vector2 direction) {
         if(direction != Vector2.zero) {
             // Check for potential collisions
@@ -94,19 +107,37 @@ public class PlayerController : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
     }
 
-    void OnFire() {
-        if (movementInput.x == 1) {
+    IEnumerator OnFire() {
+        if (WeaponType == "Sword") {
+            if (movementInput.x == 1) {
             swordAttack.AttackLeft();
+            LockMovement();
             animator.SetTrigger("swordAttack");
-        } if (movementInput.x == -1) {
-            swordAttack.AttackRight();
-            animator.SetTrigger("swordAttack");
-        } if (movementInput.y == 1) {
-            animator.SetTrigger("SwordAttackYaxisUp");
-            swordAttack.AttackUp();
-        } if (movementInput.y == -1) {
-            animator.SetTrigger("SwordAttackYaxisDown");
-            swordAttack.AttackDown();
+             yield return new WaitForSeconds(0.5f);
+            EndSwordAttack();
+            } if (movementInput.x == -1) {
+                swordAttack.AttackRight();
+                LockMovement();
+                animator.SetTrigger("swordAttack");
+                yield return new WaitForSeconds(0.5f);
+                EndSwordAttack();
+            } if (movementInput.y == 1) {
+                swordAttack.AttackUp();
+                LockMovement();
+                animator.SetTrigger("SwordAttackYaxisUp");
+                yield return new WaitForSeconds(0.5f);
+                EndSwordAttack();
+            } if (movementInput.y == -1) {
+                swordAttack.AttackDown();
+                LockMovement();
+                animator.SetTrigger("SwordAttackYaxisDown");
+                yield return new WaitForSeconds(0.5f);
+                EndSwordAttack();
+            } if (movementInput.x == 0 && movementInput.y == 0) {
+                animator.SetTrigger("SwordAttackYaxisDown");
+            }
+        } if (WeaponType == "Pistol") {
+            Debug.Log("Pistol bang bang");
         }
     }
 
