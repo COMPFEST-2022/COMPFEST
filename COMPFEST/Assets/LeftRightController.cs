@@ -29,17 +29,17 @@ public class LeftRightController : MonoBehaviour
 
         if (oldXaxis > transform.position.x) {
             //Debug.Log(oldXaxis);
-            Debug.Log("Left");
+            //Debug.Log("Left");
             spriteRenderer.flipX = true;
             oldXaxis = transform.position.x;
         } if (oldXaxis < transform.position.x) {
             //Debug.Log(oldXaxis);
-            Debug.Log("Right");
+            //Debug.Log("Right");
             spriteRenderer.flipX = false;
             oldXaxis = transform.position.x;
         }
 
-        Debug.Log(timer);
+        //Debug.Log(timer);
 
         if (timer >= 5) {
             nav.speed = 8;

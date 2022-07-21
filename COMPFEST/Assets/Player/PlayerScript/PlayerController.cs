@@ -95,9 +95,22 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnFire() {
-        animator.SetTrigger("swordAttack");
+        if (movementInput.x == 1) {
+            swordAttack.AttackLeft();
+            animator.SetTrigger("swordAttack");
+        } if (movementInput.x == -1) {
+            swordAttack.AttackRight();
+            animator.SetTrigger("swordAttack");
+        } if (movementInput.y == 1) {
+            animator.SetTrigger("SwordAttackYaxisUp");
+            swordAttack.AttackUp();
+        } if (movementInput.y == -1) {
+            animator.SetTrigger("SwordAttackYaxisDown");
+            swordAttack.AttackDown();
+        }
     }
 
+    /*
     public void SwordAttack() {
         LockMovement();
 
@@ -107,6 +120,7 @@ public class PlayerController : MonoBehaviour
             swordAttack.AttackRight();
         }
     }
+    */
 
     public void EndSwordAttack() {
         UnlockMovement();
