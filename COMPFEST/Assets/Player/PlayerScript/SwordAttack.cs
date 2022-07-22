@@ -5,6 +5,7 @@ using UnityEngine;
 public class SwordAttack : MonoBehaviour
 {
     public Collider2D swordCollider;
+    public Collider2D shootCollider;
     public Rigidbody2D bulletPrefab; //objek peluru yg dimaksud
     public Transform playerPos;
     public float damage = 3;
@@ -18,7 +19,8 @@ public class SwordAttack : MonoBehaviour
         //playerPos = GetComponent<Transform>();
         rightAttackOffset = playerPos.position - transform.position;
         swordCollider.enabled = false;
-        Debug.Log(rightAttackOffset);
+        shootCollider.enabled = false;
+        Debug.Log("PLAYER POS" + playerPos.transform.position);
         
     }
 
@@ -51,39 +53,39 @@ public class SwordAttack : MonoBehaviour
     }
 
     public void GunRight() {
-        swordCollider.enabled = true;
-        Rigidbody2D bPrefab2 = Instantiate(bulletPrefab, swordCollider.transform.position, Quaternion.Euler(new Vector3(0, 0, 180))) as Rigidbody2D;
-        //bPrefab2.GetComponent<Rigidbody2D>().AddForce(new Vector2 (bulletPos * bulletSpeed, 0));
-        transform.localPosition = rightAttackOffset;
-        timer2 = (timer + 2) * 0.01f;   
+        shootCollider.enabled = true;
+        Rigidbody2D bPrefab2 = Instantiate(bulletPrefab, shootCollider.transform.position, Quaternion.Euler(new Vector3(0, 0, 180))) as Rigidbody2D;
+        bPrefab2.GetComponent<Rigidbody2D>().AddForce(new Vector2 (bulletPos * bulletSpeed, 0));
+        transform.localPosition = rightAttackOffset; 
         Debug.Log(transform.localPosition);
+        StartCoroutine("StopShoot");
     }
 
     public void GunLeft() {
-        swordCollider.enabled = true;
-        Rigidbody2D bPrefab2 = Instantiate(bulletPrefab, swordCollider.transform.position, swordCollider.transform.rotation) as Rigidbody2D;
-        //bPrefab2.GetComponent<Rigidbody2D>().AddForce(new Vector2 (bulletPos * bulletSpeed * -1, 0));
+        shootCollider.enabled = true;
+        Rigidbody2D bPrefab2 = Instantiate(bulletPrefab, shootCollider.transform.position, swordCollider.transform.rotation) as Rigidbody2D;
+        bPrefab2.GetComponent<Rigidbody2D>().AddForce(new Vector2 (bulletPos * bulletSpeed * -1, 0));
         transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
-        timer2 = (timer + 2) * 0.01f; 
         Debug.Log(transform.localPosition);
+        StartCoroutine("StopShoot");
     }
 
      public void GunDown() {
-        swordCollider.enabled = true;
-        Rigidbody2D bPrefab2 = Instantiate(bulletPrefab, swordCollider.transform.position, Quaternion.Euler(new Vector3(0, 0, 90))) as Rigidbody2D;
-        //bPrefab2.GetComponent<Rigidbody2D>().AddForce(new Vector2 (0, bulletPos * bulletSpeed * -1));
-        transform.localPosition = new Vector3(rightAttackOffset.x * 0, rightAttackOffset.y + 1.15f);
-        timer2 = (timer + 2) * 0.01f; 
+        shootCollider.enabled = true;
+        Rigidbody2D bPrefab2 = Instantiate(bulletPrefab, shootCollider.transform.position, Quaternion.Euler(new Vector3(0, 0, 90))) as Rigidbody2D;
+        bPrefab2.GetComponent<Rigidbody2D>().AddForce(new Vector2 (0, bulletPos * bulletSpeed * -1));
+        transform.localPosition = new Vector3(rightAttackOffset.x * 0, rightAttackOffset.y + 1.15f); 
         Debug.Log(transform.localPosition);
+        StartCoroutine("StopShoot");
     }
     
      public void GunUp() {
-        swordCollider.enabled = true;
-        Rigidbody2D bPrefab2 = Instantiate(bulletPrefab, swordCollider.transform.position, Quaternion.Euler(new Vector3(0, 0, 270))) as Rigidbody2D;
-        //bPrefab2.GetComponent<Rigidbody2D>().AddForce(new Vector2 (0, bulletPos * bulletSpeed));
+        shootCollider.enabled = true;
+        Rigidbody2D bPrefab2 = Instantiate(bulletPrefab, shootCollider.transform.position, Quaternion.Euler(new Vector3(0, 0, 270))) as Rigidbody2D;
+        bPrefab2.GetComponent<Rigidbody2D>().AddForce(new Vector2 (0, bulletPos * bulletSpeed));
         transform.localPosition = new Vector3(rightAttackOffset.x * 0, rightAttackOffset.y - 1.15f);
-        timer2 = (timer + 2) * 0.01f; 
         Debug.Log(transform.localPosition);
+        StartCoroutine("StopShoot");
     }
     
     public IEnumerator StopAttack() {
@@ -91,17 +93,19 @@ public class SwordAttack : MonoBehaviour
         swordCollider.enabled = false;
     }
 
+    public IEnumerator StopShoot() {
+        yield return new WaitForSeconds(0.4f);
+        shootCollider.enabled = false;
+    }
+
+
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Enemy") {
             // Deal damage to the enemy
 
             Debug.Log("Hit");
             Enemy enemy = other.GetComponent<Enemy>();
-            enemy.RemoveEnemy();
-
-            if(enemy != null) {
-                enemy.Health -= damage;
-            }
+                enemy.DamageHealth( playerPos.transform.position);
         }
     }
 }
