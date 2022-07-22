@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5407703659682115882}
   - component: {fileID: 5407703659682115883}
   - component: {fileID: 5407703659682115856}
+  - component: {fileID: 4107735074358218720}
   m_Layer: 0
   m_Name: monster20_33
   m_TagString: Untagged
@@ -120,3 +121,16 @@ CircleCollider2D:
   m_Offset: {x: 0.01, y: -0.38}
   serializedVersion: 2
   m_Radius: 0.93
+--- !u!114 &4107735074358218720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407703659682115880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222d24f385b284746b0fdd4ef49b0a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1

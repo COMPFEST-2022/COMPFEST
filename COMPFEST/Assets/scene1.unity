@@ -170,27 +170,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.23}
   m_EdgeRadius: 0
---- !u!50 &69553860
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69553857}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &69553861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5188,7 +5167,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890981401}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.84999996
   m_Speed: 4
@@ -5221,6 +5200,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5407703659403847473}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &1890981409
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890981401}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2015508149
 GameObject:
   m_ObjectHideFlags: 0
@@ -5657,6 +5657,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: monster20_33
       objectReference: {fileID: 0}
+    - target: {fileID: 5407703659682115880, guid: 66f1c6f66eb2726438b52eaea37517b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 5407703659682115882, guid: 66f1c6f66eb2726438b52eaea37517b5,
         type: 3}
       propertyPath: m_SortingOrder
@@ -5736,6 +5741,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6667058766334914331, guid: f4716866bcd60ac41b15acb5ac0f3cd6,
+        type: 3}
+      propertyPath: swordAttack
+      value: 
+      objectReference: {fileID: 2015508152}
     - target: {fileID: 9178246825826648640, guid: f4716866bcd60ac41b15acb5ac0f3cd6,
         type: 3}
       propertyPath: m_RootOrder
@@ -5749,12 +5759,12 @@ PrefabInstance:
     - target: {fileID: 9178246825826648640, guid: f4716866bcd60ac41b15acb5ac0f3cd6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.66523004
+      value: 0.66523
       objectReference: {fileID: 0}
     - target: {fileID: 9178246825826648640, guid: f4716866bcd60ac41b15acb5ac0f3cd6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.66523004
+      value: 0.66523
       objectReference: {fileID: 0}
     - target: {fileID: 9178246825826648640, guid: f4716866bcd60ac41b15acb5ac0f3cd6,
         type: 3}
