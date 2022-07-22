@@ -38,7 +38,6 @@
   <ItemGroup>
      <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
      <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\PropsAltar.cs" />
-     <Compile Include="Assets\Player\PlayerScript\PlayerController.cs" />
      <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\LayerTrigger.cs" />
      <Compile Include="Assets\BulletScript.cs" />
      <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\CameraFollow.cs" />
@@ -49,6 +48,9 @@
      <Compile Include="Assets\Player\PlayerScript\Enemy.cs" />
      <Compile Include="Assets\PathFinding.cs" />
      <Compile Include="Assets\Bolt 2D LittleWars VE3\ReadMe\Scripts\ReadmeVE3.cs" />
+     <Compile Include="Assets\pathfindingMonster.cs" />
+     <Compile Include="Assets\FindMonsterController.cs" />
+     <Compile Include="Assets\Player\PlayerScript\Player2.cs" />
      <None Include="Assets\Cave Platformer Tileset\readme.txt" />
      <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Changelog.txt" />
      <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Shader\SH Sprite Shadow.shader" />
@@ -684,9 +686,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
         <HintPath>D:\MAH_CODE\Mob_Prog\Game_Mobile\COMPFEST_git\COMPFEST\COMPFEST\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InputSystem">
-        <HintPath>D:\MAH_CODE\Mob_Prog\Game_Mobile\COMPFEST_git\COMPFEST\COMPFEST\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>D:\MAH_CODE\Mob_Prog\Game_Mobile\COMPFEST_git\COMPFEST\COMPFEST\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
